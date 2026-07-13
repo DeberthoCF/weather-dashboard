@@ -192,20 +192,36 @@ finally{
 // ERROR FUNCTIONS
 // ================================
 
+// ================================
+// SHOW ERROR
+// ================================
+
 function showError(message){
 
-cityInput.setAttribute("aria-invalid","true");
+    cityInput.setAttribute("aria-invalid","true");
 
-errorMessage.textContent=message;
+    cityInput.setAttribute(
+        "aria-describedby",
+        "errorMessage"
+    );
+
+    errorMessage.textContent=message;
 
 }
 
 
+// ================================
+// RESET ERROR
+// ================================
+
 function resetError(){
 
-cityInput.setAttribute("aria-invalid","false");
+    cityInput.setAttribute(
+        "aria-invalid",
+        "false"
+    );
 
-errorMessage.textContent="";
+    errorMessage.textContent="";
 
 }
 
