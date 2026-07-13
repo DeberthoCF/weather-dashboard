@@ -267,6 +267,16 @@ function displayWeather(place, weatherData){
 
     weatherCard.classList.remove("hidden");
 
+    cityInput.value="";
+
+    weatherCard.scrollIntoView({
+
+    behavior:"smooth",
+
+    block:"center"
+
+});
+
 }
 
 
