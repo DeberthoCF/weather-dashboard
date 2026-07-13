@@ -266,3 +266,349 @@ button:active{
     transform:scale(.98);
 
 }
+
+/*
+
+/* ===========================
+   LOADING SECTION
+=========================== */
+
+.loading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin:40px auto;
+
+    color:#fff;
+
+    font-weight:500;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+
+/* ===========================
+   SPINNER
+=========================== */
+
+.spinner{
+
+    width:65px;
+
+    height:65px;
+
+    border:6px solid rgba(255,255,255,.25);
+
+    border-top:6px solid #ffffff;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* ===========================
+   WEATHER CARD
+=========================== */
+
+.weather-card{
+
+    width:100%;
+
+    max-width:650px;
+
+    margin:45px auto;
+
+    padding:40px 35px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.28);
+
+    text-align:center;
+
+    animation:fadeIn .6s ease;
+
+}
+
+.weather-card img{
+
+    width:110px;
+
+    height:110px;
+
+    margin-bottom:20px;
+
+}
+
+.weather-card h2{
+
+    font-size:2rem;
+
+    margin-bottom:8px;
+
+}
+
+.weather-card h3{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    margin:18px 0;
+
+}
+
+.weather-card p{
+
+    font-size:1.05rem;
+
+    margin:8px 0;
+
+    line-height:1.6;
+
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:40px;
+
+    background:rgba(0,0,0,.18);
+
+    backdrop-filter:blur(10px);
+
+    font-size:.95rem;
+
+}
+
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.weather-card{
+
+    animation:fadeIn .7s ease;
+
+}
+
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:768px){
+
+    header h1{
+
+        font-size:2.2rem;
+
+    }
+
+    form{
+
+        padding:28px;
+
+    }
+
+    .weather-card{
+
+        padding:30px 25px;
+
+    }
+
+    .weather-card h3{
+
+        font-size:2.5rem;
+
+    }
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:480px){
+
+    body{
+
+        background-attachment:scroll;
+
+    }
+
+    header{
+
+        padding:35px 15px 20px;
+
+    }
+
+    header h1{
+
+        font-size:1.8rem;
+
+    }
+
+    header p{
+
+        font-size:.95rem;
+
+    }
+
+    main{
+
+        width:94%;
+
+    }
+
+    form{
+
+        padding:22px;
+
+    }
+
+    input{
+
+        font-size:.95rem;
+
+        padding:14px;
+
+    }
+
+    button{
+
+        padding:14px;
+
+        font-size:.95rem;
+
+    }
+
+    .weather-card{
+
+        padding:25px 18px;
+
+    }
+
+    .weather-card img{
+
+        width:90px;
+
+        height:90px;
+
+    }
+
+    .weather-card h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .weather-card h3{
+
+        font-size:2.2rem;
+
+    }
+
+    .weather-card p{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+
+/* ===========================
+   LARGE SCREENS
+=========================== */
+
+@media (min-width:1200px){
+
+    header h1{
+
+        font-size:3rem;
+
+    }
+
+    .weather-card{
+
+        max-width:700px;
+
+    }
+
+}
+
+
+/* ===========================
+   HOVER EFFECT
+=========================== */
+
+.weather-card:hover{
+
+    transform:translateY(-5px);
+
+    transition:.35s;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
