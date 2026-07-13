@@ -108,7 +108,7 @@ return;
 // ================================
 
 loading.classList.remove("hidden");
-
+clearWeather();
 try{
 
     // ================================
@@ -371,5 +371,28 @@ function handleError(error){
     showError(
         "Connection failed. Please check your Internet connection."
     );
+
+}
+
+
+// ================================
+// CLEAR WEATHER CARD
+// ================================
+
+function clearWeather(){
+
+    cityName.textContent="";
+
+    country.textContent="";
+
+    temperature.textContent="";
+
+    weatherDescription.textContent="";
+
+    windSpeed.textContent="";
+
+    weatherIcon.src="";
+
+    weatherIcon.alt="";
 
 }
