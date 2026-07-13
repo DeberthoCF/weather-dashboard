@@ -232,11 +232,93 @@ resetError();
 
 function displayWeather(place, weatherData){
 
-    console.log(place);
+    const current = weatherData.current_weather;
 
-    console.log(weatherData);
+    cityName.textContent = place.name;
+
+    country.textContent = place.country;
+
+    temperature.textContent = `${current.temperature} °C`;
+
+    windSpeed.textContent = `💨 Wind Speed : ${current.windspeed} km/h`;
+
+    weatherDescription.textContent =
+        weatherCodes[current.weathercode] || "Unknown";
+
+    weatherIcon.src = getWeatherIcon(current.weathercode);
+
+    weatherIcon.alt = weatherDescription.textContent;
+
+    weatherCard.classList.remove("hidden");
 
 }
+
+
+
+// ================================
+// WEATHER ICONS
+// ================================
+
+function getWeatherIcon(code){
+
+    if(code===0){
+
+        return "https://openweathermap.org/img/wn/01d@2x.png";
+
+    }
+
+    if(code===1 || code===2){
+
+        return "https://openweathermap.org/img/wn/02d@2x.png";
+
+    }
+
+    if(code===3){
+
+        return "https://openweathermap.org/img/wn/03d@2x.png";
+
+    }
+
+    if(code===45 || code===48){
+
+        return "https://openweathermap.org/img/wn/50d@2x.png";
+
+    }
+
+    if(code>=51 && code<=67){
+
+        return "https://openweathermap.org/img/wn/09d@2x.png";
+
+    }
+
+    if(code>=71 && code<=77){
+
+        return "https://openweathermap.org/img/wn/13d@2x.png";
+
+    }
+
+    if(code>=80 && code<=82){
+
+        return "https://openweathermap.org/img/wn/10d@2x.png";
+
+    }
+
+    if(code>=95){
+
+        return "https://openweathermap.org/img/wn/11d@2x.png";
+
+    }
+
+    return "https://openweathermap.org/img/wn/01d@2x.png";
+
+}
+
+
+
+
+
+
+
 
 
 // ================================
