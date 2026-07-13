@@ -101,7 +101,89 @@ return;
 
 }
 
-// API viendra ici
+//ici, nous avons notre API :
+
+// ================================
+// SHOW LOADING
+// ================================
+
+loading.classList.remove("hidden");
+
+try{
+
+    // ================================
+    // STEP 1 : FIND CITY
+    // ================================
+
+    const geoUrl =
+    `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1`;
+
+    const geoResponse = await fetch(geoUrl);
+
+    if(!geoResponse.ok){
+
+        throw new Error("CITY_NOT_FOUND");
+
+    }
+
+    const geoData = await geoResponse.json();
+
+    if(!geoData.results || geoData.results.length===0){
+
+        throw new Error("CITY_NOT_FOUND");
+
+    }
+
+    const place = geoData.results[0];
+
+    const latitude = place.latitude;
+
+    const longitude = place.longitude;
+
+    // ================================
+    // STEP 2 : GET WEATHER
+    // ================================
+
+    const weatherUrl =
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+
+    const weatherResponse = await fetch(weatherUrl);
+
+    if(!weatherResponse.ok){
+
+        throw new Error("WEATHER_ERROR");
+
+    }
+
+    const weatherData = await weatherResponse.json();
+
+    displayWeather(place, weatherData);
+
+}
+catch(error){
+
+    handleError(error);
+
+}
+finally{
+
+    loading.classList.add("hidden");
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
@@ -141,3 +223,52 @@ resetError();
 }
 
 });
+
+
+
+// ================================
+// DISPLAY WEATHER
+// ================================
+
+function displayWeather(place, weatherData){
+
+    console.log(place);
+
+    console.log(weatherData);
+
+}
+
+
+// ================================
+// HANDLE ERRORS
+// ================================
+
+function handleError(error){
+
+    weatherCard.classList.add("hidden");
+
+    if(error.message==="CITY_NOT_FOUND"){
+
+        showError(
+            "No results found. Please check the spelling."
+        );
+
+        return;
+
+    }
+
+    if(error.message==="WEATHER_ERROR"){
+
+        showError(
+            "Unable to retrieve weather information."
+        );
+
+        return;
+
+    }
+
+    showError(
+        "Connection failed. Please check your Internet connection."
+    );
+
+}
