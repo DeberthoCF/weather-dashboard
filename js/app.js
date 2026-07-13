@@ -321,6 +321,7 @@ function getWeatherIcon(code){
 
 
 
+
 // ================================
 // HANDLE ERRORS
 // ================================
@@ -334,6 +335,8 @@ function handleError(error){
         showError(
             "No results found. Please check the spelling."
         );
+
+        cityInput.focus();
 
         return;
 
