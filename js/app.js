@@ -359,7 +359,7 @@ function handleError(error){
     if(error.message==="CITY_NOT_FOUND"){
 
         showError(
-            "No results found. Please check the spelling."
+            "No results found for this search. Please check the spelling."
         );
 
         cityInput.focus();

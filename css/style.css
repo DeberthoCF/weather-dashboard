@@ -612,3 +612,60 @@ footer{
     box-shadow:0 20px 45px rgba(0,0,0,.35);
 
 }
+
+
+.visually-hidden{
+
+    position:absolute;
+
+    width:1px;
+
+    height:1px;
+
+    padding:0;
+
+    margin:-1px;
+
+    overflow:hidden;
+
+    clip:rect(0,0,0,0);
+
+    white-space:nowrap;
+
+    border:0;
+
+}
+
+
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:40px;
+
+    background:rgba(0,0,0,.18);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.css-validator{
+
+    width:88px;
+
+    height:31px;
+
+}

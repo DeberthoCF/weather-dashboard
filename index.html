@@ -1,102 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Dashboard</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
-<header>
-
-    <h1>
+  <body>
+    <header>
+      <h1>
         <i class="fa-solid fa-cloud-sun"></i>
         Weather Dashboard
-    </h1>
+      </h1>
 
-    <p>Search any city and get the current weather.</p>
+      <p>Search any city and get the current weather.</p>
+    </header>
 
-</header>
+    <main>
+      <section class="search-section">
+        <h2 class="visually-hidden">Weather Search</h2>
 
-<main>
+        <form id="weatherForm">
+          <label for="city">City</label>
 
-<section class="search-section">
+          <input
+            type="text"
+            id="city"
+            placeholder="Enter a city..."
+            aria-describedby="errorMessage"
+          />
 
-<form id="weatherForm">
+          <p id="errorMessage" class="error-message"></p>
 
-<label for="city">City</label>
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
 
-<input
-type="text"
-id="city"
-placeholder="Enter a city..."
-aria-describedby="errorMessage">
+            Search
+          </button>
+        </form>
+      </section>
 
-<p id="errorMessage" class="error-message"></p>
+      <section class="loading hidden">
+        <h2 class="visually-hidden">Loading</h2>
 
-<button type="submit">
+        <div class="spinner"></div>
+        <p>Loading weather...</p>
+      </section>
 
-<i class="fa-solid fa-magnifying-glass"></i>
+      <section class="weather-card hidden">
+        <h2 class="visually-hidden">Weather Information</h2>
 
-Search
+        <img
+          id="weatherIcon"
+          src="https://openweathermap.org/img/wn/01d@2x.png"
+          alt="Weather icon"
+        />
 
-</button>
+        <h2 id="cityName">Search a city</h2>
 
-</form>
+        <p id="country">country</p>
 
-</section>
+        <h3 id="temperature">-- °C</h3>
 
+        <p id="weatherDescription">weather</p>
 
-<section class="loading hidden">
+        <p id="windSpeed">wind speed</p>
+      </section>
+    </main>
 
-<div class="spinner"></div>
+    <footer>
+      <p>LOG3500 • Weather Dashboard • ISTEAH 2026</p>
 
-<p>Loading weather...</p>
+      <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img
+          src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+          alt="Valid CSS!"
+          class="css-validator"
+        />
+      </a>
+    </footer>
 
-</section>
-
-
-<section class="weather-card hidden">
-
-<img
-id="weatherIcon"
-src=""
-alt="Weather icon">
-
-<h2 id="cityName"></h2>
-
-<p id="country"></p>
-
-<h3 id="temperature"></h3>
-
-<p id="weatherDescription"></p>
-
-<p id="windSpeed"></p>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>LOG3500 • Weather Dashboard • ISTEAH 2026</p>
-
-</footer>
-
-<script src="js/app.js"></script>
-
-</body>
+    <script src="js/app.js"></script>
+  </body>
 </html>
