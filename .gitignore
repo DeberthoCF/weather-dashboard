@@ -1,2 +1,6 @@
 .DS_Store
 Thumbs.db
+
+# Fichiers temporaires Office et Word
+~$*
+*.tmp
