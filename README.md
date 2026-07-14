@@ -6,6 +6,10 @@ This project is a responsive weather dashboard developed for the LOG3500 Web Pro
 
 The application allows users to search for a city and displays current weather information retrieved from the Open-Meteo API.
 
+## Démonstration
+
+![Démonstration de l'application](assets/demo.gif)
+
 ## Technologies
 
 - HTML5
